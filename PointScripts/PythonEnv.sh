@@ -1,2 +1,2 @@
 #!/bin/bash
-pip install -r --no-cache-dir requerment.txt
+pip install --no-cache-dir -r  requerment.txt
