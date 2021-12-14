@@ -4,14 +4,16 @@ import uuid
 from flask import Flask, request, json, jsonify
 from keras.models import load_model
 
-import model
+import method
 
-dl_model = load_model('./mymodel.h5')
+
+mod = method.InceptionResNetV2_model()
+mod.load_weights('Layer2-0wskindiseases.h5')
+
 app = Flask(__name__)
-
-app.secret_key = "cov-19"
 UPLOAD_FOLDER = './static'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 
 @app.route('/')
@@ -29,7 +31,7 @@ def upload():
         f_name = str(uuid.uuid4()) + extension
         path = os.path.join(app.config['UPLOAD_FOLDER'], f_name)
         file.save(path)
-        result = model.runModel(path, dl_model)
+        result =int( method.simulation(path, mod)[0])
         os.remove(path)
         return jsonify(
             status='success',
@@ -48,4 +50,6 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0' , port=5000 , debug =True )
+
+
