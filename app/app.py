@@ -17,9 +17,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def testing():  
     return jsonify(
-        info='Upload files to /upload path Using POST Request , File key is (img)',
+        msg='hello!',
     )
 
 
@@ -39,7 +39,6 @@ def upload():
             msg='',
             code=200
         )
-        # return render_ #str(model.runModel(path))
     else:
         return jsonify(
             status='fail',
