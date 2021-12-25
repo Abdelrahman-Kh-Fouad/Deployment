@@ -16,8 +16,11 @@ def upload():
     if request.method == 'POST':
 
         path = request.form.get('imgPath')
-        result =int(model.simulation(path)[0])
-        return jsonify(data= data[str(result)])
+        result =model.simulation(path)
+        resultList =[]
+        for i in range(len(result)):
+            resultList.append(data[str(result[i][0])])
+        return jsonify(data= resultList)
     else:
         return jsonify(data=None)
 

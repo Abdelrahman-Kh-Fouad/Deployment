@@ -13,39 +13,40 @@ UPLOAD_FOLDER = '../imgs'
 redirectPorts ={}
 redirectPorts = json.load(open('ip.json'))
 
+data = {}
+data = json.load((open('../Labels/{{ fileName }}.json')))
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         file = request.files['img']
         extension = os.path.splitext(file.filename)[1]
-        f_name = str(uuid.uuid4())+ extension
+        f_name = str(uuid.uuid4()) + extension
         path = os.path.join(UPLOAD_FOLDER, f_name)
         file.save(path)
-        resultFromModel = list(model.simulation(path))
+        resultFromModel = model.simulation(path)
+
         basicDeasese = []
         secondDeasese = []
+        print(resultFromModel)
 
-        for i in range(3):
+        for i in range(len(resultFromModel)):
             basicDeasese.append(int(resultFromModel[i]))
-        for result in basicDeasese :
-            port = result + 5001
-            levelTwoRequest = requests.post(f'http://{redirectPorts[str(result)]}:{port}', data={'imgPath': path})
-            print(levelTwoRequest.content)
-            print(levelTwoRequest.content['data'])
-            secondDeasese.append(levelTwoRequest.content['data'])
 
-        return jsonify({
-            'status': 'success' ,
-            'BasicDeasese' : basicDeasese ,
-            'SecondDeasese': secondDeasese
-        })
+        resultDict = {}
+        for result in basicDeasese:
+            resultDict[data[str(result)]] = []
+            try:
+                port = result + 5001
+                levelTwoRequest = requests.post(f'http://{redirectPorts[str(result)]}:{port}', data={'imgPath': path})
+                resultDict[data[str(result)]] = levelTwoRequest.json()['data']
+            except:
+                pass
+
+        return jsonify({'status': 'success', 'Data': resultDict})
     else:
-        return jsonify(
-            status='fail',
-            data=None
-        )
-
+        return jsonify(status='fail', data=None)
 
 
 if __name__ == '__main__':

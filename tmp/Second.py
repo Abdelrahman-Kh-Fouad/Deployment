@@ -12,12 +12,16 @@ model = Model({{shape}} ,  224 ,0.0001 , "../Models/{{fileName}}.h5")
 data={}
 data = json.load(open('../Labels/{{fileName}}.json'))
 @app.route('/', methods=['GET', 'POST'])
+
 def upload():
     if request.method == 'POST':
 
         path = request.form.get('imgPath')
-        result =int(model.simulation(path)[0])
-        return jsonify(data= data[str(result)])
+        result =model.simulation(path)
+        resultList =[]
+        for i in range(len(result)):
+            resultList.append(data[str(result[i][0])])
+        return jsonify(data= resultList)
     else:
         return jsonify(data=None)
 

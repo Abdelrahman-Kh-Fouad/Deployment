@@ -11,11 +11,11 @@ shape = 23
     label = 's_0.txt'
     shape = 8
 
-#     [Second.19]
-#     ip = 'localhost'
-#     model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
-#     label = 's_19.txt'
-#     shape = 0
+    [Second.19]
+    ip = 'localhost'
+    model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
+    label = 's_19.txt'
+    shape = 7
 
     [Second.2]
     ip = 'localhost'

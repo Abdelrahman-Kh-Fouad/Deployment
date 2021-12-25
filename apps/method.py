@@ -69,6 +69,19 @@ class Model :
         predIdxs = np.argmax(predIdxs, axis=1)
         return predIdxs
 
+    def test(self , test_dataset):
+        predIdxs = self.model.predict(test_dataset)
+        result = []
+        frist = np.argmax(predIdxs, axis=1)
+        result.append(frist)
+        predIdxs[0][frist] = 0
+        second = np.argmax(predIdxs, axis=1)
+        result.append(second)
+        predIdxs[0][second] = 0
+        third = np.argmax(predIdxs, axis=1)
+        result.append(third)
+        return result
+
     def simulation(self , img_path  ):
         test_tfrecord = 'test.tfrecords'
         self.build_test_tfrecord(img_path, test_tfrecord)
