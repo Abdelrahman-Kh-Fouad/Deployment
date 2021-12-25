@@ -8,9 +8,9 @@ from method import Model
 app = Flask(__name__)
 UPLOAD_FOLDER = './imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-model = Model(8 ,  224 ,0.0001 , "./Models/Layer2-0skindiseases.h5")
+model = Model(8 ,  224 ,0.0001 , "../Models/s_2.h5")
 data={}
-
+data = json.load(open('../Labels/s_2.json'))
 @app.route('/', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
@@ -20,7 +20,7 @@ def upload():
         os.remove(path)
         return jsonify(
             status='success',
-            data= data[result]
+            data= data[str(result)]
         )
     else:
         return jsonify(
@@ -28,11 +28,7 @@ def upload():
             data=None
         )
 
-def initData():
-    list = ['Acne' , ' Hidradenitis suppurativa' , 'Infantile acne' , ' Milia images' , '  Perioral dermatitis' , '   Rhinophyma' , 'Rosacea' , 'Steroid acne']
-    for i in range (8):
-        data[i] = list[i]
+
 
 if __name__ == '__main__':
-    initData()
-    app.run(host='localhost' , port=5001 , debug =True )
+    app.run(host='0.0.0.0' , port=5003 , debug =True )

@@ -6,12 +6,13 @@ from keras.models import load_model
 
 from method import Model
 
-model = Model(23 , 224 ,0.0001 ,'./Models/layer10-wskindiseases.h5')
+model = Model(23 , 224 ,0.0001 ,'../Models/basic.h5')
 
 app = Flask(__name__)
-UPLOAD_FOLDER = './imgs'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+UPLOAD_FOLDER = '../imgs'
 redirectPorts ={}
+redirectPorts = json.load(open('ip.json'))
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -19,10 +20,12 @@ def upload():
         file = request.files['img']
         extension = os.path.splitext(file.filename)[1]
         f_name = str(uuid.uuid4())+ extension
-        path = os.path.join(app.config['UPLOAD_FOLDER'], f_name)
+        path = os.path.join(UPLOAD_FOLDER, f_name)
         file.save(path)
         result =int( model.simulation(path)[0])
-        levelTwoRequest= requests.post(f"http://localhost:{redirectPorts[result]}" ,data={'imgPath':path})
+
+        port = result + 5001
+        levelTwoRequest = requests.post(f'http://{redirectPorts[str(result)]}:{port}', data={'imgPath': path})
         return levelTwoRequest.json()
     else:
         return jsonify(
@@ -30,10 +33,7 @@ def upload():
             data=None
         )
 
-def initData():
-    redirectPorts[0]=5001
 
 
 if __name__ == '__main__':
-    initData()
     app.run(host='0.0.0.0' , port=5000 , debug =True )
