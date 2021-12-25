@@ -3,19 +3,23 @@
 ip = '0.0.0.0'
 model = '1eR8_1X5erBkVlliRDGa_q-0SCmegwTxc'
 label = 'basic.txt'
-
+shape = 23
 [Second]
     [Second.0]
     ip = 'localhost'
     model = '1TDOD0169iEs-nvpNce00qOpleiUzUB-n'
     label = 's_0.txt'
+    shape = 8
 
-    [Second.19]
-    ip = 'localhost'
-    model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
-    label = 's_19.txt'
+#     [Second.19]
+#     ip = 'localhost'
+#     model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
+#     label = 's_19.txt'
+#     shape = 0
 
     [Second.2]
     ip = 'localhost'
     model = '1nDAjEVHz0YcQNpBW_g75lC2S4ZXwh_-W'
     label = 's_2.txt'
+    shape = 7
+

@@ -8,7 +8,7 @@ from method import Model
 app = Flask(__name__)
 UPLOAD_FOLDER = './imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-model = Model(8 ,  224 ,0.0001 , "../Models/{{fileName}}.h5")
+model = Model({{shape}} ,  224 ,0.0001 , "../Models/{{fileName}}.h5")
 data={}
 data = json.load(open('../Labels/{{fileName}}.json'))
 @app.route('/', methods=['GET', 'POST'])

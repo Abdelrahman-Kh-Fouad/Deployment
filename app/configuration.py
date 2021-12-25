@@ -5,7 +5,7 @@ import toml
 import json
 import jinja2
 class app :
-    def __init__(self , name ,  modelUrl , labelName ):
+    def __init__(self , name ,  modelUrl , labelName ,shape  ):
         self.name = name
         self.modelUrl = modelUrl
         self.labelName = labelName
@@ -13,6 +13,7 @@ class app :
             self.fileName = 'basic'
         else:
             self.fileName = f's_{name}'
+        self.shape =shape
 
     def DownloadModel(self):
         if not (f'{self.fileName}.h5' in modelsAlready):
@@ -42,7 +43,7 @@ class app :
         if self.name !='basic':
             port+=int(self.name )+1
 
-        file = templete.render({ 'ip': '0.0.0.0' , 'port': port , 'fileName':self.fileName })
+        file = templete.render({ 'ip': '0.0.0.0' , 'port': port , 'fileName':self.fileName , 'shape':self.shape})
         f = open(f"./apps/{self.fileName}.py", "w+")
         f.write(file)
         f.close()
@@ -60,12 +61,12 @@ if __name__ == '__main__':
     apps = []
     for tag in file :
         if tag == 'Basic':
-            apps.append(app('basic' ,file[tag]['model'] , file[tag]['label'] ))
+            apps.append(app('basic' ,file[tag]['model'] , file[tag]['label'] , file[tag]['shape']))
             ip[-1] = file[tag]['ip']
 
         if tag =='Second':
             for levelTwo in file[tag]:
-                apps.append(app( levelTwo , file[tag][levelTwo]['model'] , file[tag][levelTwo]['label']))
+                apps.append(app( levelTwo , file[tag][levelTwo]['model'] , file[tag][levelTwo]['label'], file[tag][levelTwo]['shape']))
                 ip[int(levelTwo)] = file[tag][levelTwo]['ip']
 
     global modelsAlready
