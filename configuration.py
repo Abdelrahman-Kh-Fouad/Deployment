@@ -53,6 +53,11 @@ class app :
         self.MakeCode()
 
 
+
+def MakeDirs():
+    dirs = ['Models' , 'imgs']
+    for dir in dirs :
+        subprocess.run(f'mkdir {dir}' ,shell=True)
 if __name__ == '__main__':
 
     file = toml.load('configuration.toml')
@@ -77,4 +82,5 @@ if __name__ == '__main__':
         json.dump(ip, fp)
     for i in apps:
         i.Create()
+    MakeDirs()
 
