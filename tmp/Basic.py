@@ -43,8 +43,11 @@ def upload():
                 resultDict[data[str(result)]] = levelTwoRequest.json()['data']
             except:
                 pass
-
-        return jsonify({'status': 'success', 'Data': resultDict})
+        os.remove(path)
+        resultDictTmp = []
+        for  i in resultDict :
+            resultDictTmp.append((i , resultDict[i]))
+        return jsonify({'status': 'success', 'Data': resultDictTmp})
     else:
         return jsonify(status='fail', data=None)
 

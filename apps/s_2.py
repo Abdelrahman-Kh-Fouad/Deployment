@@ -12,6 +12,7 @@ model = Model(7 ,  224 ,0.0001 , "../Models/s_2.h5")
 data={}
 data = json.load(open('../Labels/s_2.json'))
 @app.route('/', methods=['GET', 'POST'])
+
 def upload():
     if request.method == 'POST':
 
