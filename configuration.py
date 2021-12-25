@@ -21,7 +21,6 @@ class app :
             subprocess.run(f'./Scripts/down.sh {self.modelUrl} ./Models/{self.fileName}.h5' , shell=True )
 
     def MakeJson(self):
-
         labelDict = {}
         labelTxt = open(f'./Labels/{self.labelName}')
         lines = labelTxt.readlines()

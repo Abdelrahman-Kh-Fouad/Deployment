@@ -8,27 +8,20 @@ from method import Model
 app = Flask(__name__)
 UPLOAD_FOLDER = './imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-model = Model(8 ,  224 ,0.0001 , "../Models/s_0.h5")
+model = Model(7 ,  224 ,0.0001 , "../Models/s_2.h5")
 data={}
-data = json.load(open('../Labels/s_0.json'))
+data = json.load(open('../Labels/s_2.json'))
 @app.route('/', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
 
         path = request.form.get('imgPath')
         result =int(model.simulation(path)[0])
-        os.remove(path)
-        return jsonify(
-            status='success',
-            data= data[str(result)]
-        )
+        return jsonify(data= data[str(result)])
     else:
-        return jsonify(
-            status='fail',
-            data=None
-        )
+        return jsonify(data=None)
 
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0' , port=5001 , debug =True )
+    app.run(host='0.0.0.0' , port=5003 , debug =True )

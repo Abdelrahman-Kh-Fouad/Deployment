@@ -22,11 +22,24 @@ def upload():
         f_name = str(uuid.uuid4())+ extension
         path = os.path.join(UPLOAD_FOLDER, f_name)
         file.save(path)
-        result =int( model.simulation(path)[0])
+        resultFromModel = list(model.simulation(path))
+        basicDeasese = []
+        secondDeasese = []
 
-        port = result + 5001
-        levelTwoRequest = requests.post(f'http://{redirectPorts[str(result)]}:{port}', data={'imgPath': path})
-        return levelTwoRequest.json()
+        for i in range(3):
+            basicDeasese.append(int(resultFromModel[i]))
+        for result in basicDeasese :
+            port = result + 5001
+            levelTwoRequest = requests.post(f'http://{redirectPorts[str(result)]}:{port}', data={'imgPath': path})
+            print(levelTwoRequest.content)
+            print(levelTwoRequest.content['data'])
+            secondDeasese.append(levelTwoRequest.content['data'])
+
+        return jsonify({
+            'status': 'success' ,
+            'BasicDeasese' : basicDeasese ,
+            'SecondDeasese': secondDeasese
+        })
     else:
         return jsonify(
             status='fail',
