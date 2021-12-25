@@ -1,0 +1,14 @@
+angioedema
+0
+dermagraphism
+1
+erythema-annulare-centrifugum
+2
+hives-Urticaria
+3
+pressure-urticaria
+4
+PUPPP
+5
+Urticaria-Vasculitis
+6

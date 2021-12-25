@@ -6,7 +6,7 @@ from keras.models import load_model
 
 from method import Model
 
-model = Model(23 , 224 ,0.0001 ,'layer10-wskindiseases.h5')
+model = Model(23 , 224 ,0.0001 ,'./Models/layer10-wskindiseases.h5')
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './imgs'
@@ -22,7 +22,6 @@ def upload():
         path = os.path.join(app.config['UPLOAD_FOLDER'], f_name)
         file.save(path)
         result =int( model.simulation(path)[0])
-        print(redirectPorts[result])
         levelTwoRequest= requests.post(f"http://localhost:{redirectPorts[result]}" ,data={'imgPath':path})
         return levelTwoRequest.json()
     else:

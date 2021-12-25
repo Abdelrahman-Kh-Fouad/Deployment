@@ -1,4 +1,3 @@
-
 import os
 import uuid
 
@@ -9,7 +8,7 @@ from method import Model
 app = Flask(__name__)
 UPLOAD_FOLDER = './imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-model = Model(8 ,  224 ,0.0001 , "Layer2-0skindiseases.h5")
+model = Model(8 ,  224 ,0.0001 , "./Models/Layer2-0skindiseases.h5")
 data={}
 
 @app.route('/', methods=['GET', 'POST'])
