@@ -1,7 +1,6 @@
 ## Documentation 
-Made by postman [here!](documentation) 
+small documentation Made by postman [here!](documentation)
 
----
 ## Toml and label files 
 All files the basic model app nd seceondry models apps automated and changed by basic templates and rendered by jinja.
 

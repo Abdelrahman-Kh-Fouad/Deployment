@@ -45,11 +45,12 @@ def upload():
                 pass
         os.remove(path)
         resultDictTmp = []
+        #category:"cat-name",predection:[d1,d2]
         for  i in resultDict :
-            resultDictTmp.append((i , resultDict[i]))
+            resultDictTmp.append({'category':i, 'predection' : resultDict[i] })
         return jsonify({'status': 'success', 'Data': resultDictTmp})
     else:
-        return jsonify(status='fail', data=None)
+        return jsonify(status='fail', data=[])
 
 
 if __name__ == '__main__':
