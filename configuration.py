@@ -59,7 +59,7 @@ def MakeDirs():
     for dir in dirs :
         subprocess.run(f'mkdir {dir}' ,shell=True)
 if __name__ == '__main__':
-
+    MakeDirs()
     file = toml.load('configuration.toml')
     ip ={}
     apps = []
@@ -82,5 +82,4 @@ if __name__ == '__main__':
         json.dump(ip, fp)
     for i in apps:
         i.Create()
-    MakeDirs()
 

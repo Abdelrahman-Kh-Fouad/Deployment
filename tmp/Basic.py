@@ -49,7 +49,7 @@ def upload():
             resultDictTmp.append((i , resultDict[i]))
         return jsonify({'status': 'success', 'Data': resultDictTmp})
     else:
-        return jsonify(status='fail', data=None)
+        return jsonify(status='fail', data=[])
 
 
 if __name__ == '__main__':
