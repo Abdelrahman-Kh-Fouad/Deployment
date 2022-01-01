@@ -20,6 +20,9 @@ data = json.load((open('../Labels/basic.json')))
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
+        ip_address = request.remote_addr
+        print(ip_address)
+
         file = request.files['img']
         extension = os.path.splitext(file.filename)[1]
         f_name = str(uuid.uuid4()) + extension
