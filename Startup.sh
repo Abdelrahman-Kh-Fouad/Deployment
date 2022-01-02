@@ -1,3 +1,3 @@
 #!/bin/bash
-python3 configruation.py
+python3 configuration.py
 bash ./apps/run.sh
