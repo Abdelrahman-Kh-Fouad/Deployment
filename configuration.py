@@ -1,9 +1,9 @@
 import os
 import subprocess
-
 import toml
 import json
 import jinja2
+
 class app :
     def __init__(self , name ,  modelUrl , labelName ,shape  ):
         self.name = name
@@ -36,6 +36,7 @@ class app :
             templeteName = 'Basic.py'
         else :
             templeteName = "Second.py"
+
         templete = jinjaEnv.get_template(templeteName)
         port = 5000
 
@@ -43,6 +44,7 @@ class app :
             port+=int(self.name )+1
 
         file = templete.render({ 'ip': '0.0.0.0' , 'port': port , 'fileName':self.fileName , 'shape':self.shape})
+
         f = open(f"./apps/{self.fileName}.py", "w+")
         f.write(file)
         f.close()
@@ -53,7 +55,6 @@ class app :
         self.MakeCode()
 
 
-
 def MakeDirs():
     dirs = ['Models' , 'imgs']
     for dir in dirs :
@@ -61,6 +62,7 @@ def MakeDirs():
 
 if __name__ == '__main__':
     MakeDirs()
+
     file = toml.load('configuration.toml')
     ip ={}
     apps = []
@@ -81,6 +83,7 @@ if __name__ == '__main__':
 
     with open(f'./apps/ip.json', 'w+') as fp:
         json.dump(ip, fp)
+
     for i in apps:
         i.Create()
 

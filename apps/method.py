@@ -63,23 +63,14 @@ class Model :
 
         return model
 
-    def test(self , test_dataset  ):
-        
-        predIdxs = self.model.predict(test_dataset)
-        predIdxs = np.argmax(predIdxs, axis=1)
-        return predIdxs
 
     def test(self , test_dataset):
         predIdxs = self.model.predict(test_dataset)
         result = []
-        frist = np.argmax(predIdxs, axis=1)
-        result.append(frist)
-        predIdxs[0][frist] = 0
-        second = np.argmax(predIdxs, axis=1)
-        result.append(second)
-        predIdxs[0][second] = 0
-        third = np.argmax(predIdxs, axis=1)
-        result.append(third)
+        for i in range (3):
+            frist = np.argmax(predIdxs, axis=1)
+            result.append(Result(frist , predIdxs[0][frist]))
+            predIdxs[0][frist] = 0
         return result
 
     def simulation(self , img_path  ):
@@ -91,3 +82,10 @@ class Model :
 
 
         
+class Result :
+    def __init__(self, index , prop) :
+        self.index = int(index[0])
+        self.prop = float(prop[0])
+
+    def __repr__(self):
+        return f'{self.index} {self. prop}'
