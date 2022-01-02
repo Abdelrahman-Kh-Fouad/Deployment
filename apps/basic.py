@@ -6,15 +6,15 @@ from flask import Flask, request, json, jsonify
 from keras.models import load_model
 from method import Model
 
-model = Model( 23 , 224 ,0.0001 ,'../Models/basic.h5')
+model = Model( 23 , 224 ,0.0001 ,'./Models/basic.h5')
 
 app = Flask(__name__)
-UPLOAD_FOLDER = '../imgs'
+UPLOAD_FOLDER = './imgs'
 redirectIP ={}
-redirectIP = json.load(open('ip.json'))
+redirectIP = json.load(open('./apps/ip.json'))
 
 labelDict = {}
-labelDict = json.load((open('../Labels/basic.json')))
+labelDict = json.load((open('./Labels/basic.json')))
 
 
 @app.route('/upload', methods=['GET', 'POST'])

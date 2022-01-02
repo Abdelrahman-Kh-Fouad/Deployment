@@ -1,6 +1,5 @@
 # This is a TOML document.
-# basic ip = lapla
-# seocnd ec2_ip  = ip
+
 [Basic]
 ip = '0.0.0.0'
 model = '1eR8_1X5erBkVlliRDGa_q-0SCmegwTxc'
