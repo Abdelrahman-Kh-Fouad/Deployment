@@ -7,9 +7,9 @@ from keras.models import load_model
 from method import Model
 app = Flask(__name__)
 
-model = Model( {{shape}} ,  224 ,0.0001 , "./Models/{{fileName}}.h5")
+model = Model( {{shape}} ,  224 ,0.0001 , "../Models/{{fileName}}.h5")
 labelDict = {}
-labelDict = json.load(open('./Labels/{{fileName}}.json'))
+labelDict = json.load(open('../Labels/{{fileName}}.json'))
 
 @app.route('/', methods=['GET', 'POST'])
 def upload():
@@ -20,7 +20,7 @@ def upload():
             resultFromModel = model.simulation(path)
             resultList = []
             for result in resultFromModel:
-                resultList.append({'deasese': data[str(result.index)], 'probability': result.prop})
+                resultList.append({'disease': data[str(result.index)], 'probability': result.prop})
             os.remove(path)
             data = resultList
         except:
