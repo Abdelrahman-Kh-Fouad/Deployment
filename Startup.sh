@@ -1,6 +1,3 @@
+!#/bin/bash
 python3 configruation.py
-
-for file in ./apps/*.py
-do
-  nohup $file &
-done
+bash ./apps/run.py

@@ -67,4 +67,4 @@ def upload():
 #     r = requests.request(url= 'http://dls-grad.spider-te8.com/api/v1/storeNewIPAddress' , method='POST' , )
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0' , port= 5000 , debug =True )
+    app.run(host='0.0.0.0' , port= 5000 , debug =False )
