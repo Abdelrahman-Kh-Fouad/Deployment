@@ -5,9 +5,10 @@ import json
 import jinja2
 
 class app :
-    def __init__(self , name ,  modelUrl , labelName ,shape  ):
+    def __init__(self , name ,  modelUrl , labelName , shape , redownload:bool ):
         self.name = name
         self.modelUrl = modelUrl
+        self.redownload = bool(redownload)
         self.labelName = labelName
         if self.name == 'basic':
             self.fileName = 'basic'
@@ -16,7 +17,8 @@ class app :
         self.shape =shape
 
     def DownloadModel(self):
-        if not (f'{self.fileName}.h5' in modelsAlready):
+        modelsAlready =set(file for file in os.listdir('./Models'))
+        if not (f'{self.fileName}.h5' in modelsAlready) or self.redownload:
             print(f'Downloading {self.fileName}.h5')
             subprocess.run(f'./Scripts/down.sh {self.modelUrl} ./Models/{self.fileName}.h5' , shell=True )
 
@@ -61,25 +63,34 @@ def MakeDirs():
         subprocess.run(f'mkdir {dir}' ,shell=True)
 
 if __name__ == '__main__':
-    MakeDirs()
 
-    file = toml.load('configuration.toml')
+    MakeDirs()
+    tomFile = toml.load('configuration.toml')
     ip ={}
     apps = []
-    for tag in file :
+    for tag in tomFile :
         if tag == 'Basic':
-            apps.append(app('basic' ,file[tag]['model'] , file[tag]['label'] , file[tag]['shape']))
-            ip[-1] = file[tag]['ip']
+            apps.append(
+                app(
+                    'basic',
+                    tomFile[tag]['model'] ,
+                    tomFile[tag]['label'] ,
+                    tomFile[tag]['shape'] ,
+                    int(tomFile[tag]['redownload'])
+                ))
+            ip[-1] = tomFile[tag]['ip']
 
         if tag =='Second':
-            for levelTwo in file[tag]:
-                apps.append(app( levelTwo , file[tag][levelTwo]['model'] , file[tag][levelTwo]['label'], file[tag][levelTwo]['shape']))
-                ip[int(levelTwo)] = file[tag][levelTwo]['ip']
-
-    global modelsAlready
-    modelsAlready = set()
-    for file in os.listdir('./Models'):
-        modelsAlready.add(file)
+            for levelTwo in tomFile[tag]:
+                apps.append(
+                    app(
+                        levelTwo ,
+                        tomFile[tag][levelTwo]['model'] ,
+                        tomFile[tag][levelTwo]['label'] ,
+                        tomFile[tag][levelTwo]['shape'] ,
+                        int(tomFile[tag][levelTwo]['redownload'])
+                    ))
+                ip[int(levelTwo)] = tomFile[tag][levelTwo]['ip']
 
     with open(f'./apps/ip.json', 'w+') as fp:
         json.dump(ip, fp)

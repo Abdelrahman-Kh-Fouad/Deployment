@@ -50,7 +50,8 @@ def upload():
 
             os.remove(path)
             data = resultDict
-
+    else :
+        note = 'wrong request'
     status = 'success' if status else 'faild'
     return jsonify({
         'status': status,
