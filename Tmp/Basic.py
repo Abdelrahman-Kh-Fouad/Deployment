@@ -13,6 +13,7 @@ UPLOAD_FOLDER = '../Imgs'
 redirectIP ={}
 redirectIP = json.load(open('ip.json'))
 
+
 labelDict = {}
 labelDict = json.load((open('../Labels/{{ fileName }}.json')))
 
