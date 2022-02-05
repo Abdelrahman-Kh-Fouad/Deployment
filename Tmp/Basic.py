@@ -9,7 +9,7 @@ from method import Model
 model = Model( {{shape}} , 224 ,0.0001 ,'../Models/{{ fileName }}.h5')
 
 app = Flask(__name__)
-UPLOAD_FOLDER = '../imgs'
+UPLOAD_FOLDER = '../Imgs'
 redirectIP ={}
 redirectIP = json.load(open('ip.json'))
 

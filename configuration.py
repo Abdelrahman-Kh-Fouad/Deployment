@@ -32,7 +32,7 @@ class app :
             json.dump(labelDict , fp)
 
     def MakeCode(self):
-        jinjaEnv = jinja2.Environment(loader=jinja2.FileSystemLoader('tmp'))
+        jinjaEnv = jinja2.Environment(loader=jinja2.FileSystemLoader('Tmp'))
         templeteName = None
         if self.name == 'basic':
             templeteName = 'Basic.py'
@@ -47,7 +47,7 @@ class app :
 
         file = templete.render({ 'ip': '0.0.0.0' , 'port': port , 'fileName':self.fileName , 'shape':self.shape})
 
-        f = open(f"./apps/{self.fileName}.py", "w+")
+        f = open(f"./Apps/{self.fileName}.py", "w+")
         f.write(file)
         f.close()
 
@@ -58,7 +58,7 @@ class app :
 
 
 def MakeDirs():
-    dirs = ['Models' , 'imgs']
+    dirs = ['Models' , 'Imgs']
     for dir in dirs :
         subprocess.run(f'mkdir {dir}' ,shell=True)
 
@@ -92,7 +92,7 @@ if __name__ == '__main__':
                     ))
                 ip[int(levelTwo)] = tomFile[tag][levelTwo]['ip']
 
-    with open(f'./apps/ip.json', 'w+') as fp:
+    with open(f'./Apps/ip.json', 'w+') as fp:
         json.dump(ip, fp)
 
     for i in apps:

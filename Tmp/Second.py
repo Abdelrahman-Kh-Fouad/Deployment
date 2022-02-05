@@ -6,7 +6,7 @@ from keras.models import load_model
 
 from method import Model
 app = Flask(__name__)
-UPLOAD_FOLDER = './imgs'
+UPLOAD_FOLDER = './Imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 model = Model( {{shape}} ,  224 ,0.0001 , "../Models/{{fileName}}.h5")
 data={}
