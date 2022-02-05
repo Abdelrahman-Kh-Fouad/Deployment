@@ -1,8 +1,8 @@
 ## Documentation 
-small documentation Made by postman [here!](documentation)
+Small documentation maded by postman [here!](documentation)
 
 ## Toml and label files 
-All files the basic model app nd seceondry models apps automated and changed by basic templates and rendered by jinja.
+All files the basic model app and seceondry models apps automated and changed by basic templates and rendered by jinja.
 
 ### Toml rules :
 
@@ -31,5 +31,5 @@ DermatitisLids
 Eczema Areolae
 2
 ```
-format as you see to make it easy in parsing :satisfied:<br>
+format as you see to make it easy in parsing 
 `shape` = __shape of labels in models__
