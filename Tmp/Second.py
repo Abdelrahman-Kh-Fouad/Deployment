@@ -19,7 +19,10 @@ def upload():
         resultFromModel =model.simulation(path)
         resultList =[]
         for result in resultFromModel:
-            resultList.append({'diseases' : data[str(result.index)] , 'probability' :result.prop })
+            resultList.append({
+                'diseases' : data[str(result.index)] ,
+                'probability' :result.prop
+            })
         return jsonify(data= resultList)
     else:
         return jsonify(data=None)

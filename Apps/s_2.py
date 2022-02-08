@@ -6,7 +6,7 @@ from keras.models import load_model
 
 from method import Model
 app = Flask(__name__)
-UPLOAD_FOLDER = './imgs'
+UPLOAD_FOLDER = './Imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 model = Model( 7 ,  224 ,0.0001 , "../Models/s_2.h5")
 data={}
@@ -19,7 +19,7 @@ def upload():
         resultFromModel =model.simulation(path)
         resultList =[]
         for result in resultFromModel:
-            resultList.append({'deasese' : data[str(result.index)] , 'probability' :result.prop })
+            resultList.append({'diseases' : data[str(result.index)] , 'probability' :result.prop })
         return jsonify(data= resultList)
     else:
         return jsonify(data=None)

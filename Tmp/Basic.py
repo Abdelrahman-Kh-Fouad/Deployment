@@ -47,7 +47,11 @@ def upload():
                     secondResult =  levelTwoRequest.json()['data']
                 except:
                     note = "some models doesn't exist"
-                resultDict.append({'category':labelDict[str(result.index)] , 'propability' : result.prop , 'predection' : secondResult})
+                resultDict.append({
+                    'category':labelDict[str(result.index)] ,
+                    'propability' : result.prop ,
+                    'predection' : secondResult
+                })
 
             os.remove(path)
             data = resultDict
@@ -59,8 +63,6 @@ def upload():
         'data': data ,
         'note':note
     })
-
-
 
 # def SendIP():
 #     r = requests.request(url = 'http://checkip.amazonaws.com' , method='GET')
