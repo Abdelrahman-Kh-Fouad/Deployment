@@ -19,8 +19,9 @@ if __name__ == '__main__':
             print(f'Time -> {deff}s')
 
             response = request.json()
-            print(f'Status : {response["status"]}')
+            print(request.status_code)
             try:
+                print(f'Status : {response["status"]}')
                 pprint.pprint(response['data'])
             except:
                 pass
