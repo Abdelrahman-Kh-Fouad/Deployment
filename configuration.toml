@@ -5,7 +5,7 @@
 [Servers]
 number = 1
     [Servers.0]
-    ipv4 = '18.217.35.253'
+    ipv4 = '156.216.102.122'
 
 [Basic]
 parent = 0
@@ -19,20 +19,17 @@ shape = 23
     parent = 0
     model = '1TDOD0169iEs-nvpNce00qOpleiUzUB-n'
     redownload = 0
-    label = 's_0.txt'
     shape = 8
 
     [Second.19]
     parent = 0
     model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
     redownload = 0
-    label = 's_19.txt'
     shape = 7
 
     [Second.2]
     parent = 0
     model = '1nDAjEVHz0YcQNpBW_g75lC2S4ZXwh_-W'
     redownload = 0
-    label = 's_2.txt'
     shape = 7
 

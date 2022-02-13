@@ -17,13 +17,13 @@ if __name__ == '__main__':
             after = time.time()
             deff = "{:.2f}".format(after -before)
             print(f'Time -> {deff}s')
-
+            print(f'{generlPath}/{spPath}')
             response = request.json()
             print(request.status_code)
             try:
-                print(f'Status : {response["status"]}')
-                pprint.pprint(response['data'])
+                print(json.dumps(response,sort_keys=True, indent=4))
+                print(60 *'-')
             except:
                 pass
 
-    print(url)
+    
