@@ -23,9 +23,6 @@ if __name__ == '__main__':
                 App(
                     'basic',
                     tomFile[tag]['model'] ,
-                    tomFile[tag]['label'] ,
-                    tomFile[tag]['shape'] ,
-                    int(tomFile[tag]['redownload']),
                     serversIps[tomFile[tag]['parent']]
                 ))
         if tag =='Second':
@@ -34,9 +31,6 @@ if __name__ == '__main__':
                     App(
                         levelTwo ,
                         tomFile[tag][levelTwo]['model'] ,
-                        tomFile[tag][levelTwo]['label'] ,
-                        tomFile[tag][levelTwo]['shape'] ,
-                        int(tomFile[tag][levelTwo]['redownload']),
                         serversIps[tomFile[tag][levelTwo]['parent']]
                     ))
 

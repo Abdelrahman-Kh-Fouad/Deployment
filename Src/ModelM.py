@@ -28,6 +28,7 @@ class ModelMan :
                     cnt +=1
                     fileInBytes = rarF.read(inner)
                     dic = Json.ConvertFromBinToJson(fileInBytes , True)
+                    self.shape = len(dic)
                     with open(f"./Labels/{self.name}.json", "ab") as f:
                         f.write(dic)
 

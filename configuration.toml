@@ -9,21 +9,25 @@ number = 1
 
 [Basic]
 parent = 0
-model = '1eR8_1X5erBkVlliRDGa_q-0SCmegwTxc'
+model = '1-rfV85rTtGRMCi3ljUN0FgKnsiLjnPf5'
 
 [Second]
     [Second.0]
     parent = 0
-    model = '1TDOD0169iEs-nvpNce00qOpleiUzUB-n'
+    #Acne
+    model = '1ECwXvWlPmi7m5frvhGq5z2vfPhldAU8j'
 
     [Second.1]
+    #actinic
     parent = 0
-    model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
+    model = '1AC6fNcb7tGRLfKy6zggRb6cvv_Yl75aD'
 
     [Second.2]
+    #Atopic
     parent = 0
-    model = '1nDAjEVHz0YcQNpBW_g75lC2S4ZXwh_-W'
+    model = '1HHtOq3UdC6qcVyjrdE0c8cI4tBYeyQnX'
 
     [Second.3]
+    #poison
     parent =0
-    model = "dad"
+    model = "1A9IU-x-vtsrKIKGuxnIyAnzl6AZ3PV08"

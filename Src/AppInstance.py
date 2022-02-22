@@ -6,11 +6,9 @@ import jinja2
 from ModelM import ModelMan
 from Utils import IP
 class App :
-    def __init__(self , name ,  modelUrl , labelName , shape , redownload:bool , toBuildIp :str ):
+    def __init__(self , name ,  modelUrl , toBuildIp:str ):
         self.name = name
         self.modelUrl = modelUrl
-        self.redownload = bool(redownload)
-        self.labelName = labelName
         self.toBuildIp = toBuildIp
         self.IsSameIp = self.IsSame()
 
@@ -18,11 +16,12 @@ class App :
             self.fileName = 'basic'
         else:
             self.fileName = f's_{name}'
-        self.shape =shape
+        self.shape = None
 
     def ModelManuplation(self):
         model = ModelMan(self.modelUrl , self.name)
         model.CreateRar()
+        self.shape = model.shape
 
     def MakeCode(self):
 
