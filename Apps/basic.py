@@ -6,7 +6,7 @@ from flask import Flask, request, json, jsonify
 from keras.models import load_model
 from method import Model
 
-model = Model( 23 , 224 ,0.0001 ,'../Models/basic.h5')
+model = Model( 4 , 224 ,0.0001 ,'../Models/basic.h5')
 
 app = Flask(__name__)
 UPLOAD_FOLDER = '../Imgs'
@@ -47,7 +47,11 @@ def upload():
                     secondResult =  levelTwoRequest.json()['data']
                 except:
                     note = "some models doesn't exist"
-                resultDict.append({'category':labelDict[str(result.index)] , 'propability' : result.prop , 'predection' : secondResult})
+                resultDict.append({
+                    'category':labelDict[str(result.index)] ,
+                    'propability' : result.prop ,
+                    'predection' : secondResult
+                })
 
             os.remove(path)
             data = resultDict
@@ -60,12 +64,10 @@ def upload():
         'note':note
     })
 
-
-
 # def SendIP():
 #     r = requests.request(url = 'http://checkip.amazonaws.com' , method='GET')
 #     ip = r.text
 #     r = requests.request(url= 'http://dls-grad.spider-te8.com/api/v1/storeNewIPAddress' , method='POST' , )
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0' , port= 5000 , debug =False )
+    app.run(host='0.0.0.0' , port= 80 , debug =False )

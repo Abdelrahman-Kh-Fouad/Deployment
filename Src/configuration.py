@@ -43,7 +43,7 @@ if __name__ == '__main__':
                 serversIps[int(server)] = tomFile[tag][server]['ipv4']
 
     with open(f'./Apps/ip.json', 'w+') as fp:
-        json.dump(ip, fp)
+        json.dump(serversIps, fp)
 
     for i in apps:
         i.Create()

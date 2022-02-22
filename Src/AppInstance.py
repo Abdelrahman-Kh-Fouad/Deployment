@@ -19,7 +19,7 @@ class App :
         self.shape = None
 
     def ModelManuplation(self):
-        model = ModelMan(self.modelUrl , self.name)
+        model = ModelMan(self.modelUrl , self.name ,self.fileName)
         model.CreateRar()
         self.shape = model.shape
 
@@ -33,10 +33,10 @@ class App :
             templeteName = "Second.py"
 
         templete = jinjaEnv.get_template(templeteName)
-        port = 5000
+        port = 80
 
         if self.name !='basic':
-            port+=int(self.name )+1
+            port = 5000 +int(self.name )+1
 
         file = templete.render({
             'ip': '0.0.0.0' ,
@@ -54,7 +54,6 @@ class App :
 
     def Create(self):
         if self.IsSameIp:
-            self.DownloadModel()
-            self.MakeJson()
+            self.ModelManuplation()
             self.MakeCode()
 
