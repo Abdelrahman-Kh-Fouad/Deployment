@@ -10,26 +10,20 @@ number = 1
 [Basic]
 parent = 0
 model = '1eR8_1X5erBkVlliRDGa_q-0SCmegwTxc'
-redownload = 0
-label = 'basic.txt'
-shape = 23
 
 [Second]
     [Second.0]
     parent = 0
     model = '1TDOD0169iEs-nvpNce00qOpleiUzUB-n'
-    redownload = 0
-    shape = 8
 
-    [Second.19]
+    [Second.1]
     parent = 0
     model = '1dH9RYHz9cY59oUfPSwHVRBrWDVAah_Yy'
-    redownload = 0
-    shape = 7
 
     [Second.2]
     parent = 0
     model = '1nDAjEVHz0YcQNpBW_g75lC2S4ZXwh_-W'
-    redownload = 0
-    shape = 7
 
+    [Second.3]
+    parent =0
+    model = "dad"

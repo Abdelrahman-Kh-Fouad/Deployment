@@ -28,8 +28,6 @@ if __name__ == '__main__':
                     int(tomFile[tag]['redownload']),
                     serversIps[tomFile[tag]['parent']]
                 ))
-            ip[-1] = tomFile[tag]['ip']
-
         if tag =='Second':
             for levelTwo in tomFile[tag]:
                 apps.append(
@@ -41,7 +39,7 @@ if __name__ == '__main__':
                         int(tomFile[tag][levelTwo]['redownload']),
                         serversIps[tomFile[tag][levelTwo]['parent']]
                     ))
-                ip[int(levelTwo)] = tomFile[tag][levelTwo]['ip']
+
 
         if tag == 'Servers':
             serversNum = tomFile[tag]['number']
