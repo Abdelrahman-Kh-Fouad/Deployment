@@ -51,6 +51,7 @@ if __name__ == '__main__':
                 ips[app.name] = '0.0.0.0'
             else :
                 ips[app.name] = app.toBuildIp
+        app.Create()
     if basicIn :
         with open('./Apps/ip.json' ,'w+') as fp :
             json.dump(ips , fp)
