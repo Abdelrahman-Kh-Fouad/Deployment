@@ -1,8 +1,6 @@
-import os
 import subprocess
 import toml
 import json
-import jinja2
 from AppInstance import App
 
 def MakeDirs():

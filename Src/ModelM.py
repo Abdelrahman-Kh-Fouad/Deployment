@@ -1,5 +1,4 @@
 import json
-
 from Utils import RAR
 from Utils import Download
 from rarfile import RarFile
