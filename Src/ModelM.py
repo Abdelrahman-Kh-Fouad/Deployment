@@ -15,16 +15,16 @@ class ModelMan :
     def DownloadRAR(self):
         flag:bool = True
         try :
-            flag:bool = not RAR.Check(f'Imports/{self.name}.rar')
+            flag = not RAR.Check(f'./Imports/{self.fileName}.rar')
         except:
             pass
         while flag:
-            print(f'Download Model for {self.name}')
-            Download.DownloadFromDrive(self.googleDriveId , f'Imports/{self.fileName}.rar')
-            flag = flag and not RAR.Check(f'Imports/{self.fileName}.rar')
+            print(f'Download Model for {self.fileName}')
+            Download.DownloadFromDrive(self.googleDriveId , f'./Imports/{self.fileName}.rar')
+            flag = flag and not RAR.Check(f'./Imports/{self.fileName}.rar')
 
     def Extract(self):
-        rarF = RarFile(f'Imports/{self.name}.rar')
+        rarF = RarFile(f'Imports/{self.fileName}.rar')
         if len(rarF.namelist()) !=2 :
             warn = f'Error in rar file of model {self.name}'
             raise ValueError(warn)
