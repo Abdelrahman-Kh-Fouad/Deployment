@@ -14,7 +14,6 @@ if __name__ == '__main__':
 
     MakeDirs()
     tomFile = toml.load('configuration.toml')
-    ip ={}
     apps = []
     serversIps = {}
     for tag in tomFile :
@@ -42,10 +41,21 @@ if __name__ == '__main__':
                     continue
                 serversIps[int(server)] = tomFile[tag][server]['ipv4']
 
-    with open(f'./Apps/ip.json', 'w+') as fp:
+    with open('./Apps/sets.json', 'w+') as fp:
         json.dump(serversIps, fp)
+    ips ={}
+    basicIn:bool = False
+    for app in apps:
+        if app.name=='basic' and app.isSameIp :
+            basicIn =True
+        if app.name != 'basic':
+            if app.isSameIp:
+                ips[app.name] = '0.0.0.0'
+            else :
+                ips[app.name] = app.toBuildIp
+    if basicIn :
+        with open('./Apps/ip.json' ,'w+') as fp :
+            json.dump(ips , fp)
 
-    for i in apps:
-        i.Create()
 
     print('Done')

@@ -27,6 +27,7 @@ class ModelMan :
         rarF = RarFile(f'Imports/{self.fileName}.rar')
         if len(rarF.namelist()) !=2 :
             warn = f'Error in rar file of model {self.name}'
+            os.remove(f'Imports/{self.fileName}.rar')
             raise ValueError(warn)
         else :
             cnt =0
@@ -49,6 +50,7 @@ class ModelMan :
 
             if cnt !=2 :
                 warn = f'Error in rar file (there are files not in same extension) on model {self.name}'
+                os.remove(f'Imports/{self.fileName}.rar')
                 raise  ValueError(warn)
 
     def CreateRar(self):

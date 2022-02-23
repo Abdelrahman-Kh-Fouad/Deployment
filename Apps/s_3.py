@@ -8,9 +8,9 @@ from method import Model
 app = Flask(__name__)
 UPLOAD_FOLDER = './Imgs'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-model = Model( 4 ,  224 ,0.0001 , "../Models/s_2.h5")
+model = Model( 4 ,  224 ,0.0001 , "../Models/s_3.h5")
 data={}
-data = json.load(open('../Labels/s_2.json'))
+data = json.load(open('../Labels/s_3.json'))
 
 @app.route('/', methods=['GET', 'POST'])
 def upload():
@@ -29,4 +29,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0' , port=5003 , debug =False )
+    app.run(host='0.0.0.0' , port=5004 , debug =False )

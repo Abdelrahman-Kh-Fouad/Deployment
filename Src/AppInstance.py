@@ -10,7 +10,7 @@ class App :
         self.name = name
         self.modelUrl = modelUrl
         self.toBuildIp = toBuildIp
-        self.IsSameIp = self.IsSame()
+        self.isSameIp = self.IsSame()
 
         if self.name == 'basic':
             self.fileName = 'basic'
@@ -53,7 +53,7 @@ class App :
         return myIp == self.toBuildIp
 
     def Create(self):
-        if self.IsSameIp:
+        if self.isSameIp:
             self.ModelManuplation()
             self.MakeCode()
 
