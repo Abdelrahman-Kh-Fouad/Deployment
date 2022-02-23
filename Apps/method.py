@@ -10,9 +10,9 @@ class Model :
         self.model = self.InceptionResNetV2_model()
         self.model.load_weights(modelPath)
 
-    def build_test_tfrecord(self , img,test_tfrecord):  # Generate TFRecord of test set
+    def build_test_tfrecord(self , img ,test_tfrecord):  # Generate TFRecord of test set
         with tf.io.TFRecordWriter(test_tfrecord)as writer:
-                image = open(img, 'rb').read()
+                image = img
 
                 feature = {
                     'image': tf.train.Feature(bytes_list=tf.train.BytesList(value=[image])),
@@ -73,9 +73,9 @@ class Model :
             predIdxs[0][frist] = 0
         return result
 
-    def simulation(self , img_path  ):
+    def simulation(self , img  ):
         test_tfrecord = 'test.tfrecords'
-        self.build_test_tfrecord(img_path, test_tfrecord)
+        self.build_test_tfrecord(img, test_tfrecord)
         test_dataset = self.get_test_dataset(test_tfrecord)
         test_dataset = self.data_Preprocessing(test_dataset) 
         return self.test(test_dataset ) 

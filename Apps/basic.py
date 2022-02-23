@@ -5,7 +5,7 @@ import requests
 from flask import Flask, request, json, jsonify
 from method import Model
 
-model = Model( {{shape}} , 224 ,0.0001 ,'../Models/{{ fileName }}.h5')
+model = Model( 4 , 224 ,0.0001 ,'../Models/basic.h5')
 
 app = Flask(__name__)
 UPLOAD_FOLDER = '../Imgs'
@@ -21,7 +21,7 @@ def upload():
     status = request.method == 'POST'
     if status:
         labelDict = {}
-        labelDict = json.load((open('../Labels/{{ fileName }}.json')))
+        labelDict = json.load((open('../Labels/basic.json')))
         ip_address = request.remote_addr
         try :
             imgFile = request.files['img']
@@ -68,4 +68,4 @@ def upload():
 #     r = requests.request(url= 'http://dls-grad.spider-te8.com/api/v1/storeNewIPAddress' , method='POST' , )
 
 if __name__ == '__main__':
-    app.run(host='{{ip}}' , port= {{port}} , debug =False )
+    app.run(host='0.0.0.0' , port= 5030 , debug =False )
