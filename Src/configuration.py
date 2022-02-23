@@ -6,7 +6,7 @@ import jinja2
 from AppInstance import App
 
 def MakeDirs():
-    dirs = ['Models' , 'Imgs']
+    dirs = ['Models' , 'Imgs' , 'Imports']
     for dir in dirs :
         subprocess.run(f'mkdir {dir}' ,shell=True)
 
