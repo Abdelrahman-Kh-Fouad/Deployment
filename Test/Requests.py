@@ -17,7 +17,10 @@ def go(path):
     response = request.json()
     print(request.status_code)
     try:
-        print(json.dumps(response,sort_keys=True, indent=4))
+        
+        path = path.strip().replace(' ','\ ')
+        print(json.dumps(response,sort_keys=True, indent=4) )
+        os.system(f"viu -1 -w 60 -h 30 {path}")
         print(60 *'-')
     except:
         pass

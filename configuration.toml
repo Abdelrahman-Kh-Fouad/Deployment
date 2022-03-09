@@ -15,19 +15,23 @@ model = '1-rfV85rTtGRMCi3ljUN0FgKnsiLjnPf5'
     [Second.0]
     parent = 0
     #Acne
+    #9
     model = '1ECwXvWlPmi7m5frvhGq5z2vfPhldAU8j'
 
     [Second.1]
     #actinic
+    #17
     parent = 0
     model = '1AC6fNcb7tGRLfKy6zggRb6cvv_Yl75aD'
 
     [Second.2]
     #Atopic
+    #4
     parent = 0
     model = '1HHtOq3UdC6qcVyjrdE0c8cI4tBYeyQnX'
 
     [Second.3]
     #poison
+    #4
     parent =0
     model = "1A9IU-x-vtsrKIKGuxnIyAnzl6AZ3PV08"
