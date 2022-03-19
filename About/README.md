@@ -2,7 +2,7 @@
 ## Explain:
   Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend and itself. 
   
-<p style ="text-align:center"><img height = 300 src ='./Figures/SampleOfBack-endDeployment.drawio.png'></p>
+<p style = "text-align:center"><img src ='./Figures/SampleOfBack-endDeployment.drawio.png'></p>
 
 - First thing we install a system on every server we want to use and make initial setup.
   - Initial setup establish file system and scripts needed and addressing all servers by basic configuration file. 
