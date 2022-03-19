@@ -1,6 +1,14 @@
+<style>
+  p {
+  font-size: 1.7em;
+}
+</style>
+
 # Deployment (Microservices) Back-end
-## Explain:
-  Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend and itself. 
+
+# Explain:
+
+Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend and itself. 
   
 <p style = "text-align:center"><img src ='./Figures/SampleOfBack-endDeployment.drawio.png'></p>
 
@@ -59,19 +67,38 @@
         }
     
     ```
-## tools:
+
+# tools:
+
 - **Framework and libraries**:
+  
   - We using **`FastApi`** for wrapping models ,**`FastApi`** is very fast and optimizable and we also using it for engines.
   - We using **`AWS EC2’s`** and sometimes **`Digitalocean droplets`** for servers.
   - We using libraries like **`jinja`** for templating models ,and networks libraries (**`Requests`**), and os libraries(**`os , subprocess`**) and toml for configuration.
   - Bash scripts for running files and make for setup configuration in servers.
+
   - **`Tensorflow`** and **`keras`** for models prediction process.
-- **Languages**:
-  - **python** ,**shell**
+- **Languages** :  
+
+  - **python** 
+  
+  - **bash** 
+  
+
+  
 - **Tools and library**:
-  - `Pycharm` :For coding and testing .
+  
+  - `Pycharm` :For coding and testing . 
   - `vsCode` :Also for coding and testing.
+  
   - `Anaconda` :For python environments. 
+  
+
 - **Licences:**
-  - MIT licences , BSD. 
+  
+  - MIT licences 
+  
+  -  BSD.
+  
+
 
