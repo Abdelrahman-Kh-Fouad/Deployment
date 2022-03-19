@@ -1,6 +1,7 @@
 # Deployment (Microservices) Back-end
 ## Explain:
-    Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend and itself. 
+  Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend and itself. 
+  
 <p style ="text-align:center"><img height = 300 src ='./Figures/SampleOfBack-endDeployment.drawio.png'></p>
 
 - First thing we install a system on every server we want to use and make initial setup.
@@ -11,6 +12,7 @@
             [Servers.0]
             ipv4 = "41.44.5.83"
     ``` 
+
   - Start all engines and make servers.
   - Loading all models written in basic Toml configuration file.
       ```toml
@@ -25,11 +27,13 @@
             #9
             model = '1ECwXvWlPmi7m5frvhGq5z2vfPhldAU8j 
        ```
+
 - When all engines running they making sure that all basic engine connected to basic engine.
   - All ips cahnges will go to basic engine and change it in configrations.
   - Every engine response to handling models in it server (run model edit it and remove it ) and redirct images to correct services **(that contain modls)**.
 <img src="./Figures/timeline.drawio.png">
-  - all changes will be saved in small database saves system state.
+
+  - All changes will be saved in small database saves system state.
   - **Basic engine** has api to receive all changes from `Midlle-ware dashboard` and handle images and send images scores .
     
    
