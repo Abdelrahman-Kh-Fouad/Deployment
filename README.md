@@ -35,7 +35,7 @@ Deployment Back-end handles our two layers models between any servers  and inter
 - When all engines running they making sure that all basic engine connected to basic engine.
   - All ips cahnges will go to basic engine and change it in configrations.
   - Every engine response to handling models in it server (run model edit it and remove it ) and redirct images to correct services **(that contain modls)**.
-<img src="../About/Figures/timeline.drawio.png">
+<img src="./About/Figures/timeline.drawio.png">
 
   - All changes will be saved in small database saves system state.
   - **Basic engine** has api to receive all changes from `Midlle-ware dashboard` and handle images and send images scores .
