@@ -8,7 +8,8 @@
 
 # Explain:
 
-Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend and itself. 
+Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend.
+
   
 <p style = "text-align:center"><img src ='./Figures/SampleOfBack-endDeployment.drawio.png'></p>
 

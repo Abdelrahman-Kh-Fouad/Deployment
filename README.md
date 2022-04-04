@@ -1,36 +1,100 @@
-## Documentation 
-Small documentation maded by postman [here!](documentation)
 
-## Toml and label files 
-All files the basic model app and seceondry models apps automated and changed by basic templates and rendered by jinja.
+# Deployment (Microservices) Back-end
 
-### Toml rules :
+# Explain:
 
-```toml
-[Basic]
-ip = '0.0.0.0'
-model = '1eR8_1X5erBkVlliRDGa_q-0SCmegwTxc'
-label = 'basic.txt'
-shape = 23
-[Second]
-    [Second.0]
-    ip = 'localhost'
-    model = '1TDOD0169iEs-nvpNce00qOpleiUzUB-n'
-    label = 's_0.txt'
-    shape = 8
-```
-As you see one section for Basic file and section for secondery files.<br>
-`ip` = __ip of server of section__<br>
-`model` =  __file name in google drive__<br>
-`label` = __labeling of model you should put it in Labels dir__<br> 
-```text
-Atopic
-0
-DermatitisLids
-1
-Eczema Areolae
-2
-```
-format as you see to make it easy in parsing <br>
-`shape` = __shape of labels in models__
+Deployment Back-end handles our two layers models between any servers  and interactions between them and communicates with Middleware Backend.
+
+  
+<p style = "text-align:center"><img src ='./About/Figures/SampleOfBack-endDeployment.drawio.png'></p>
+
+- First thing we install a system on every server we want to use and make initial setup.
+  - Initial setup establish file system and scripts needed and addressing all servers by basic configuration file. 
+    ```toml
+        [Servers]
+        number = 1
+            [Servers.0]
+            ipv4 = "41.44.5.83"
+    ``` 
+
+  - Start all engines and make servers.
+  - Loading all models written in basic Toml configuration file.
+      ```toml
+        [Basic]
+        parent = 0
+        model = '1-rfV85rTtGRMCi3ljUN0FgKnsiLjnPf5'
+
+        [Second]
+            [Second.0]
+            parent = 0
+            #Acne
+            #9
+            model = '1ECwXvWlPmi7m5frvhGq5z2vfPhldAU8j 
+       ```
+
+- When all engines running they making sure that all basic engine connected to basic engine.
+  - All ips cahnges will go to basic engine and change it in configrations.
+  - Every engine response to handling models in it server (run model edit it and remove it ) and redirct images to correct services **(that contain modls)**.
+<img src="./Figures/timeline.drawio.png">
+
+  - All changes will be saved in small database saves system state.
+  - **Basic engine** has api to receive all changes from `Midlle-ware dashboard` and handle images and send images scores .
+    
+   
+    ```json
+        //response format
+        {
+            "category": "Acne and Rosacea",
+            "predection": [
+                {
+                    "diseases": "milia",
+                    "probability": 0.9999897480010986
+                },
+                {
+                    "diseases": "Rosacea",
+                    "probability": 5.848230102856178e-06
+                },
+                {
+                    "diseases": "Infantile acne",
+                    "probability": 1.3212483054303448e-06
+                }
+            ],
+            "propability": 0.9999912977218628
+        }
+    
+    ```
+
+# tools:
+
+- **Framework and libraries**:
+  
+  - We using **`FastApi`** for wrapping models ,**`FastApi`** is very fast and optimizable and we also using it for engines.
+  - We using **`AWS EC2’s`** and sometimes **`Digitalocean droplets`** for servers.
+  - We using libraries like **`jinja`** for templating models ,and networks libraries (**`Requests`**), and os libraries(**`os , subprocess`**) and toml for configuration.
+  - Bash scripts for running files and make for setup configuration in servers.
+
+  - **`Tensorflow`** and **`keras`** for models prediction process.
+- **Languages** :  
+
+  - **python** 
+  
+  - **bash** 
+  
+
+  
+- **Tools and library**:
+  
+  - `Pycharm` :For coding and testing . 
+  - `vsCode` :Also for coding and testing.
+  
+  - `Anaconda` :For python environments. 
+  
+
+- **Licences:**
+  
+  - MIT licences 
+  
+  -  BSD.
+  
+
 
