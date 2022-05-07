@@ -49,7 +49,7 @@ def go(path):
 if __name__ == '__main__':
     url = sys.argv[1]
     print(url)
-    currentPath = os.getcwd() +  '/Diseases'
+    currentPath = './Diseases'
     list = []
     for generlPath in os.listdir(currentPath):
         try :

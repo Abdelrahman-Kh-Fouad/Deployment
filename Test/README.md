@@ -1,9 +1,9 @@
 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/m32.jpg">
+<img height = 500 width = 600 src ="./Diseases/m32.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.49s </h3>
+<h3 style ="text-align:center "> Response time = 3.28s </h3>
 
 ```json
 {
@@ -70,9 +70,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/1.jpg">
+<img height = 500 width = 600 src ="./Diseases/1.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.02s </h3>
+<h3 style ="text-align:center "> Response time = 2.08s </h3>
 
 ```json
 {
@@ -139,9 +139,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/acne.jpg">
+<img height = 500 width = 600 src ="./Diseases/acne.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 3.12s </h3>
+<h3 style ="text-align:center "> Response time = 3.04s </h3>
 
 ```json
 {
@@ -208,9 +208,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/acne-face-1-50_226.jpg">
+<img height = 500 width = 600 src ="./Diseases/acne-face-1-50_226.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.03s </h3>
+<h3 style ="text-align:center "> Response time = 2.13s </h3>
 
 ```json
 {
@@ -277,9 +277,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/34.jpg">
+<img height = 500 width = 600 src ="./Diseases/34.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.06s </h3>
+<h3 style ="text-align:center "> Response time = 1.97s </h3>
 
 ```json
 {
@@ -346,9 +346,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/atopic-dermatitis-8-2.jpg">
+<img height = 500 width = 600 src ="./Diseases/atopic-dermatitis-8-2.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.29s </h3>
+<h3 style ="text-align:center "> Response time = 2.59s </h3>
 
 ```json
 {
@@ -415,9 +415,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/428e20c8-2464-11e9-9177-bd3ae24bba4f_image_hires_123552.jpeg">
+<img height = 500 width = 600 src ="./Diseases/428e20c8-2464-11e9-9177-bd3ae24bba4f_image_hires_123552.jpeg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.46s </h3>
+<h3 style ="text-align:center "> Response time = 2.71s </h3>
 
 ```json
 {
@@ -484,9 +484,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/21737-cystic-acne-694069284.jpg">
+<img height = 500 width = 600 src ="./Diseases/21737-cystic-acne-694069284.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.47s </h3>
+<h3 style ="text-align:center "> Response time = 2.13s </h3>
 
 ```json
 {
@@ -553,9 +553,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/10.jpeg">
+<img height = 500 width = 600 src ="./Diseases/10.jpeg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.04s </h3>
+<h3 style ="text-align:center "> Response time = 2.42s </h3>
 
 ```json
 {
@@ -622,9 +622,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/11.jpg">
+<img height = 500 width = 600 src ="./Diseases/11.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.92s </h3>
+<h3 style ="text-align:center "> Response time = 3.05s </h3>
 
 ```json
 {
@@ -691,9 +691,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/d22.jpg">
+<img height = 500 width = 600 src ="./Diseases/d22.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.46s </h3>
+<h3 style ="text-align:center "> Response time = 2.70s </h3>
 
 ```json
 {
@@ -760,9 +760,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/Actinic-Keratosis.jpg">
+<img height = 500 width = 600 src ="./Diseases/Actinic-Keratosis.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 2.90s </h3>
+<h3 style ="text-align:center "> Response time = 2.75s </h3>
 
 ```json
 {
@@ -829,9 +829,9 @@
 ------- 
 
 <p style ="text-align:center">
-<img height = 500 width = 600 src ="/home/abdelrahmankh/GP/Microservices-Backend/Test/Diseases/Rash-on-the-arm-from-poison-ivy-1296X728-gallery_slide1.jpg">
+<img height = 500 width = 600 src ="./Diseases/Rash-on-the-arm-from-poison-ivy-1296X728-gallery_slide1.jpg">
 </p>
-<h3 style ="text-align:center "> Response time = 6.25s </h3>
+<h3 style ="text-align:center "> Response time = 13.16s </h3>
 
 ```json
 {
