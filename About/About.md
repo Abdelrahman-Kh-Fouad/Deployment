@@ -37,6 +37,14 @@ Deployment Back-end handles our two layers models between any servers  and inter
             model = '1ECwXvWlPmi7m5frvhGq5z2vfPhldAU8j 
        ```
 
+- We have two types of servers **Basic server** and **Secondery server** 
+- **Basic Servers** 
+  
+  - has `Basic Engine` and `Categorization model`.
+  
+  - we can deploy **Middle-ware BackEnd** on it.
+    
+
 - When all engines running they making sure that all basic engine connected to basic engine.
   - All ips cahnges will go to basic engine and change it in configrations.
   - Every engine response to handling models in it server (run model edit it and remove it ) and redirct images to correct services **(that contain modls)**.
@@ -71,10 +79,13 @@ Deployment Back-end handles our two layers models between any servers  and inter
 
 # tools:
 
+- **servers**:
+    - We used **`AWS EC2’s`** and **`Digitalocean droplets`** for first stages.
+   
+  - We're using **VPS** form **`Contabo`** now. 
 - **Framework and libraries**:
   
   - We using **`FastApi`** for wrapping models ,**`FastApi`** is very fast and optimizable and we also using it for engines.
-  - We using **`AWS EC2’s`** and sometimes **`Digitalocean droplets`** for servers.
   - We using libraries like **`jinja`** for templating models ,and networks libraries (**`Requests`**), and os libraries(**`os , subprocess`**) and toml for configuration.
   - Bash scripts for running files and make for setup configuration in servers.
 
